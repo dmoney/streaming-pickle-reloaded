@@ -1,6 +1,6 @@
 # Streaming Pickle Reloaded
 
-This is a fork of streaming-pickle, which, as one might guess, is a streaming version of Pickle.  Pickle is the built in serialization library in Python..  It was forked, at the time, to support Python 3, in order to upgrade a specific internal project I was working on.  This version is NOT backwards compatible with Python 2.*.
+This is a fork of [streaming-pickle](https://github.com/pgbovine/streaming-pickle) (as of when it lived on [Google Code](https://code.google.com/archive/p/streaming-pickle/) ), which, as one might guess, is a streaming version of Pickle.  Pickle is the built in serialization library in Python..  It was forked, at the time, to support Python 3, in order to upgrade a specific internal project I was working on.  This version is NOT backwards compatible with Python 2.*.
 
 The API should contain everything from whenever it was forked, but the serialization format is changed.  But then Pickle's format isn't guaranteed to stay the same between Python releases either.  So you should only use this (or Pickle, for that matter) for data that doesn't need to live longer than a Python release.
 
