@@ -10,7 +10,7 @@ Pickle lets you serialize objects, including lists of objects.  However, if you 
 
 This reads and writes to file-like objects, so it could be used to stream over a socket, but networking is up to you.  The same caution as with Pickle applies: you shouldn't de-serialize data from untrusted sources.
 
-Public Functions:
+## Public Functions:
 
 * `s_dump(iterable_to_pickle, file_obj)` - Dump contents of an iterable `iterable_to_pickle` to `file_obj`, a file
     that is opened in write+binary mode.
@@ -18,7 +18,7 @@ Public Functions:
 * `s_load(file_obj)` - Load contents from `file_obj`, open in read+binary mode, returning a generator that yields one
   element at a time
 
-Usage example:
+## Usage example:
 
 ```python
 >>> from sPickle import *
