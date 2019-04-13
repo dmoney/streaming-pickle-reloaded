@@ -13,7 +13,25 @@ This reads and writes to file-like objects, so it could be used to stream over a
 Public Functions:
 
 * `s_dump(iterable_to_pickle, file_obj)` - Dump contents of an iterable `iterable_to_pickle` to `file_obj`, a file
-    that is opened in write mode.
+    that is opened in write+binary mode.
 * `s_dump_elt(elt, file_obj)` Dump a single element to an open file.
-* `s_load(file_obj)` - Load contents from `file_obj`, returning a generator that yields one
+* `s_load(file_obj)` - Load contents from `file_obj`, open in read+binary mode, returning a generator that yields one
   element at a time
+
+Usage example:
+
+```python
+>>> from sPickle import *
+>>> with open('a_file.whatever', 'wb') as f:
+...     s_dump(['one', 'two', 'three'], f)
+...     s_dump_elt('four', f)
+...
+>>> with open('a_file.whatever', 'rb') as f:
+...     for element in s_load(f):
+...         print(element)
+...
+one
+two
+three
+four
+```
